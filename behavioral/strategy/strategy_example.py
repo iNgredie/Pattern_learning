@@ -45,7 +45,6 @@ if __name__ == '__main__':
     maxim = Student('Максим')
     maxim.write('Пишу лекцию о паттерне Статегия')
 
-
     sasha = Painter('Саша')
     sasha.write('Рисую иллюстрацию к паттерну Стратегия')
 
