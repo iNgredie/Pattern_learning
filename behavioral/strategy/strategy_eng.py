@@ -67,4 +67,17 @@ def on_sale_discount(order: Order) -> float:
 
 
 if __name__ == '__main__':
+
     order = Order(100, discount_strategy=ten_percent_discount)
+
+    assert str(order) == '<Order price: 100 with discount strategy: ten_percent_discount>'
+    assert order.apply_discount() == 90.0
+
+    order = Order(100, discount_strategy=on_sale_discount)
+
+    assert str(order) == '<Order price: 100 with discount strategy: on_sale_discount>'
+    assert order.apply_discount() == 55.0
+
+    order = Order(10, discount_strategy=on_sale_discount)
+
+    assert str(order) == '<Order price: 10 with discount strategy: None>'
